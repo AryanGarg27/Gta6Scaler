@@ -2,16 +2,16 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
-const PS5_AFF  = 'https://www.amazon.in/s?k=PS5+console&tag=YOUR_TAG';
-const XBOX_AFF = 'https://www.amazon.in/s?k=Xbox+Series+X&tag=YOUR_TAG';
-const BASE_URL = 'https://gta6scaler.com';
+const PS5_AFF = 'https://amzn.to/4w8nupb';
+const XBOX_AFF = 'https://amzn.to/4fZgUwt';
+const BASE_URL = 'https://app.notion.com/p/GTA-6-Pre-Order-Guide-2026-Price-Editions-Bonuses-Where-to-Buy-3896bdc4c8b3804f9b98d5473ad5acfd';
 
 const CATEGORY_STYLE = {
-  guides:      'bg-pink-900/40 text-pink-300 border-pink-800',
-  news:        'bg-blue-900/40 text-blue-300 border-blue-800',
-  tips:        'bg-purple-900/40 text-purple-300 border-purple-800',
+  guides: 'bg-pink-900/40 text-pink-300 border-pink-800',
+  news: 'bg-blue-900/40 text-blue-300 border-blue-800',
+  tips: 'bg-purple-900/40 text-purple-300 border-purple-800',
   'pre-order': 'bg-yellow-900/40 text-yellow-300 border-yellow-800',
-  default:     'bg-gta-card text-gta-muted border-gta-border',
+  default: 'bg-gta-card text-gta-muted border-gta-border',
 };
 
 /* ── Static paths ──────────────────────────────────────────────── */
@@ -24,18 +24,18 @@ export async function generateMetadata({ params }) {
   const post = await getPostBySlug(params.slug);
   if (!post) return {};
   return {
-    title:       post.title,
+    title: post.title,
     description: post.description,
     openGraph: {
-      title:         post.title,
-      description:   post.description,
-      type:          'article',
+      title: post.title,
+      description: post.description,
+      type: 'article',
       publishedTime: post.date,
-      url:           `${BASE_URL}/blog/${post.slug}`,
+      url: `${BASE_URL}/blog/${post.slug}`,
     },
     twitter: {
-      card:        'summary_large_image',
-      title:       post.title,
+      card: 'summary_large_image',
+      title: post.title,
       description: post.description,
     },
   };
@@ -46,7 +46,7 @@ export default async function PostPage({ params }) {
   const post = await getPostBySlug(params.slug);
   if (!post) notFound();
 
-  const catKey   = post.category?.toLowerCase();
+  const catKey = post.category?.toLowerCase();
   const catStyle = CATEGORY_STYLE[catKey] ?? CATEGORY_STYLE.default;
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${BASE_URL}/blog/${post.slug}`)}&via=gta6scaler`;
 
@@ -148,11 +148,11 @@ export default async function PostPage({ params }) {
                 Quick Facts
               </p>
               {[
-                ['Release',   'Nov 19, 2026'],
+                ['Release', 'Nov 19, 2026'],
                 ['Platforms', 'PS5 / Xbox Series X/S'],
-                ['Price',     '~$79.99 standard'],
-                ['PC',        'Not at launch'],
-                ['Setting',   'Leonida / Vice City'],
+                ['Price', '~$79.99 standard'],
+                ['PC', 'Not at launch'],
+                ['Setting', 'Leonida / Vice City'],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between items-start gap-2 text-xs py-2 border-b border-gta-border last:border-0">
                   <span className="text-gta-muted shrink-0">{k}</span>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-const PS5_AFF  = 'https://www.amazon.in/s?k=PS5+console&tag=YOUR_TAG';
-const XBOX_AFF = 'https://www.amazon.in/s?k=Xbox+Series+X&tag=YOUR_TAG';
+const PS5_AFF = 'https://amzn.to/4w8nupb';
+const XBOX_AFF = 'https://amzn.to/4fZgUwt';
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
               Not affiliated with Rockstar Games.
             </p>
             <div className="flex gap-4">
-              <a href="https://twitter.com/gta6scaler" target="_blank" rel="noopener noreferrer"
+              <a href="https://twitter.com/gta6scalers" target="_blank" rel="noopener noreferrer"
                 className="text-gta-muted hover:text-gta-pink text-sm transition-colors">X / Twitter</a>
               <a href="https://instagram.com/gta6scaler" target="_blank" rel="noopener noreferrer"
                 className="text-gta-muted hover:text-gta-pink text-sm transition-colors">Instagram</a>
@@ -36,10 +36,10 @@ export default function Footer() {
             <h4 className="font-russo text-gta-text text-xs tracking-widest mb-4 uppercase">Content</h4>
             <div className="flex flex-col gap-2.5">
               {[
-                ['Latest News',    '/blog'],
-                ['Pre-Order Guide','/blog/gta6-pre-order-guide-2026'],
-                ['Leonida Map',    '/map'],
-                ['All Guides',     '/blog?cat=guides'],
+                ['Latest News', '/blog'],
+                ['Pre-Order Guide', '/blog/gta6-pre-order-guide-2026'],
+                ['Leonida Map', '/map'],
+                ['All Guides', '/blog?cat=guides'],
               ].map(([label, href]) => (
                 <Link key={href} href={href}
                   className="text-gta-muted hover:text-gta-text text-sm transition-colors">

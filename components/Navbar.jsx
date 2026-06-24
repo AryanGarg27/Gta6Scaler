@@ -4,14 +4,14 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const NAV = [
-  { label: 'News',       href: '/blog' },
-  { label: 'Guides',     href: '/blog?cat=guides' },
-  { label: 'Pre-Order',  href: '/blog/gta6-pre-order-guide-2026' },
-  { label: 'Map',        href: '/map' },
+  { label: 'News', href: '/blog' },
+  { label: 'Guides', href: '/blog?cat=guides' },
+  { label: 'Pre-Order', href: '/blog/gta6-pre-order-guide-2026' },
+  { label: 'Map', href: '/map' },
 ];
 
 // ── Replace with your actual Amazon affiliate tag ──────────────────────────
-const PS5_AFFILIATE = 'https://www.amazon.in/s?k=PS5+console&tag=YOUR_TAG';
+const PS5_AFFILIATE = 'https://amzn.to/4w8nupb';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);

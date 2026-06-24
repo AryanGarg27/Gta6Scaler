@@ -2,20 +2,20 @@ import Link from 'next/link';
 import PostCard, { FeaturedCard } from '@/components/PostCard';
 import { getAllPosts } from '@/lib/posts';
 
-const PS5_AFF  = 'https://www.amazon.in/s?k=PS5+console&tag=YOUR_TAG';
-const XBOX_AFF = 'https://www.amazon.in/s?k=Xbox+Series+X&tag=YOUR_TAG';
+const PS5_AFF = 'https://amzn.to/4w8nupb';
+const XBOX_AFF = 'https://amzn.to/4fZgUwt';
 
 const STATS = [
-  { label: 'Release date',     value: 'Nov 19, 2026'         },
-  { label: 'Pre-orders open',  value: 'June 25, 2026'        },
-  { label: 'Platforms',        value: 'PS5 + Xbox Series X/S'},
-  { label: 'Expected price',   value: '~$79.99'              },
+  { label: 'Release date', value: 'Nov 19, 2026' },
+  { label: 'Pre-orders open', value: 'June 25, 2026' },
+  { label: 'Platforms', value: 'PS5 + Xbox Series X/S' },
+  { label: 'Expected price', value: '~$79.99' },
 ];
 
 export default function HomePage() {
   const allPosts = getAllPosts();
   const featured = allPosts[0];
-  const grid     = allPosts.slice(1, 7);
+  const grid = allPosts.slice(1, 7);
 
   return (
     <div className="max-w-6xl mx-auto px-4">
